@@ -1,0 +1,23 @@
+ProbOnto.owl version 1.1.5 merged
+
+To be cloned into 2.0.0
+
+Additions: 
+- added new instances of Probability Distributions
+- added HF and SF together with relevant informations
+- added a number of additional labels for distributions with alternative names
+
+Change to namespace and ID conventions: 
+- This release of ProbOnto has a single namespace: http://www.probonto.org/ontology for entities derived from http://www.probonto.org/core and http://www.probonto.org/kb
+- IDs are formatted as follows: 
+PROB_[c|k]nnnnnnn
+where "c" is used for core entities and "k" is used for knowledge base entities. The numerical part retains the 7 digit format. 
+
+http://www.probonto.org/core#0000020 is equivalent to http://www.probonto.org/ontology#PROB_c0000020
+
+http://www.probonto.org/kb#0000020 is equivalent to http://www.probonto.org/ontology#PROB_k0000020
+
+No formal mapping is provided between versions. 
+
+Backward compatibility through mapping: unverified
+
