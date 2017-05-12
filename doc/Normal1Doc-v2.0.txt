@@ -1,0 +1,188 @@
+Normal1Doc-v2.0.txt -- P.grenon @ ucl.ac.uk -- 12/05/2017
+
+
+Purpose and limitations
+
+This document illustrates the information about a given probability distribution that is asserted as part of the OWL encoding of version 2.0 of ProbOnto. 
+
+Reference: https://github.com/probonto/ontology/blob/master/release/probonto-v2.0.owl
+
+
+Overview
+
+A probability distribution is an entity and a number of assertions are used that either relate it to other entities or provide string based records of relevant information. Section A below shows the snippet of assertions about Normal 1. 
+
+Some of the entities to which a probability distribution relates include: 
+
+a) specific functions such as, for example, a CDF (section B provides the snippet of assertions about the CDF of Normal 1), 
+
+b) moments such as, for example, the mean of a probability distribution (section C provides the snippet of assertions about the mean of Normal 1),
+
+c) parameters (section D provides the snippet of assertions about one of Normal 1's parameters). 
+
+Additional information in ProbOnto version 2.0 include relationships between distributions. Section E provides the snippet of information about one such relationship involving Normal 1.
+
+Below, each RDF assertion taken from the source is paraphrased in English. 
+
+
+A. Here is Normal1
+
+<http://www.probonto.org/ontology#PROB_k0000239>
+      a       <http://www.probonto.org/ontology#PROB_c0000020> ;
+# This object is an instance of the class Probability Distribution
+      
+      rdfs:label "Normal"^^<en> , "Gaussian"^^<en> , "Normal 1" ;
+# It has these human readable names (string).
+
+      <http://www.probonto.org/ontology#PROB_c0000028>
+              "Normal 1"^^<en> ;
+# It has this preferred human readable name (string).
+
+      <http://www.probonto.org/ontology#PROB_c0000029>
+              "Normal1"^^<en> ;
+# It has this codename (string). 
+
+     <http://www.probonto.org/ontology#PROB_c0000037>
+              <http://www.probonto.org/ontology#PROB_k0000240> ;
+# It has this PDF (object). See below.
+
+      <http://www.probonto.org/ontology#PROB_c0000039>
+              <http://www.probonto.org/ontology#PROB_k0000241> ;
+# It has this CDF (object). See below B.
+
+      <http://www.probonto.org/ontology#PROB_c0000042>
+              <http://www.probonto.org/ontology#PROB_k0000242> ;
+# It has this mean (object). See below C.
+
+      <http://www.probonto.org/ontology#PROB_c0000043>
+              <http://www.probonto.org/ontology#PROB_k0000243> ;
+# It has this median (object). See below.
+
+      <http://www.probonto.org/ontology#PROB_c0000044>
+              <http://www.probonto.org/ontology#PROB_k0000244> ;
+# It has this mode (object). See below.
+
+      <http://www.probonto.org/ontology#PROB_c0000045>
+              <http://www.probonto.org/ontology#PROB_k0000245> ;
+# It has this variance (object). See below.
+
+      <http://www.probonto.org/ontology#PROB_c0000054>
+              "x"^^<en> ;
+# This is the symbol in Latex for the corresponding variate (string).
+
+      <http://www.probonto.org/ontology#PROB_c0000059>
+              "x \\in R"^^<en> ;
+# This is the definition of its support in Latex (string).
+              
+      <http://www.probonto.org/ontology#PROB_c0000062>
+<http://www.probonto.org/ontology#PROB_k0000247> , <http://www.probonto.org/ontology#PROB_k0000246> .
+# It has these parameters (object). See below D.
+
+
+
+B. Here is Normal1's CDF
+
+<http://www.probonto.org/ontology#PROB_k0000241>
+      a       <http://www.probonto.org/ontology#PROB_c0000025> ;   
+# This object is an instance of the class of cumulative distribution functions. 
+
+      rdfs:label "CDF of Normal 1" ;
+# It has this human readable name (string).
+      
+      <http://www.probonto.org/ontology#PROB_c0000028>
+              "CDF of Normal 1"^^<en> ;
+# It has this preferred human readable name (string).
+
+      <http://www.probonto.org/ontology#PROB_c0000034>
+              "\\frac12\\left[1 + \\text{erf}\\left( \\frac{x-\\mu}{\\sigma\\sqrt{2}}\\right)\\right]"^^<en> ;
+# This is how it is expressed in Latex (string). 
+              
+      <http://www.probonto.org/ontology#PROB_c0000083>
+"1/2 * (1 + erf((x-mu)/(sigma*sqrt(2))))"^^<en> .
+# This is how it is coded in R (string). 
+
+
+
+C. Here is the mean of Normal1
+
+<http://www.probonto.org/ontology#PROB_k0000242>
+      a       <http://www.probonto.org/ontology#PROB_c0000005> ;
+# This object is an instance of the class of mathematical objects. 
+
+
+      rdfs:label "mean of Normal 1" ;
+# It has this human readable name (string).
+
+      <http://www.probonto.org/ontology#PROB_c0000028>
+              "mean of Normal 1"^^<en> ;
+# It has this preferred human readable name (string).
+
+      <http://www.probonto.org/ontology#PROB_c0000034>
+"\\mu"^^<en> .
+# This is how it is expressed in Latex (string). 
+
+
+D. Here is one of Normal1's parameters. 
+
+<http://www.probonto.org/ontology#PROB_k0000247>
+      a       <http://www.probonto.org/ontology#PROB_c0000005> ;
+# This object is an instance of the class of mathematical objects. 
+
+      rdfs:label "standard deviation of Normal-1" ;
+# It has this human readable name (string).
+
+     <http://www.probonto.org/ontology#PROB_c0000028>
+              "standard deviation of Normal-1"^^<en> ;
+# It has this preferred human readable name (string).
+
+      <http://www.probonto.org/ontology#PROB_c0000029>
+              "Normal1.stdev"^^<en> ;
+# It has this codename (string). 
+
+      <http://www.probonto.org/ontology#PROB_c0000031>
+              "\\sigma"^^<en> ;
+# This is the symbol for it in Latex (string). 
+
+      <http://www.probonto.org/ontology#PROB_c0000049>
+              "\\sigma> 0"^^<en> ;
+# This is how its definition is expressed in plain text. 
+
+      <http://www.probonto.org/ontology#PROB_c0000051>
+              "standard deviation"^^<en> ;
+# It has this short name (string). 
+              
+      <http://www.probonto.org/ontology#PROB_c0000060>
+"stdev"^^<en> .
+# It has this short codename (string). 
+
+
+
+E. Here is a relationship involving Normal 1. 
+
+
+<http://www.probonto.org/ontology#PROB_k0000870>
+      a       <http://www.probonto.org/ontology#PROB_c0000078> ;
+# This is an instance of the class of 'limiting' relationships. 
+      
+      rdfs:label "relationship between Binomial 1 and Normal 1 whereby \\\\text{For } X \\\\sim Binomial1n,p \\\\text{ as } n \\\\rightarrow \\\\infty, X \\\\text{ is approximately normally distributed } \\\\\\\\Normal1\\\\mu,\\\\sigma \\\\text{ with } \\\\mu=np, \\\\sigma=np1-p." ;
+# It has this human readable name (string).
+
+      <http://www.probonto.org/ontology#PROB_c0000071>
+              <http://www.probonto.org/ontology#PROB_k0000117> ;
+# It is a relationship from Binomial 1 (i.e., between Binomial 1 and something).
+
+      <http://www.probonto.org/ontology#PROB_c0000072>
+              <http://www.probonto.org/ontology#PROB_k0000239> ;
+# It is a relationship to Normal 1 (i.e., between something and Normal 1). 
+
+      <http://www.probonto.org/ontology#PROB_c0000073>
+              "\\text{For } X \\sim Binomial1(n,p) \\text{ as } n \\rightarrow \\infty, X \\text{ is approximately normally distributed } \\\\Normal1(\\mu,\\sigma) \\text{ with } \\mu=np, \\sigma=np(1-p)."^^<en> ;
+# This is how the relationship is defined in Latex. 
+
+      <http://www.probonto.org/ontology#PROB_c0000074>
+              "Binomial1(n,p) \\rightarrow Normal1(\\mu,\\sigma)"^^<en> ;
+# This is how the relationship is noted in Latex. 
+
+      <http://www.probonto.org/ontology#PROB_c0000075>
+"\\cite{Leemis:2008tg} \\\\ \\url{http://www.math.wm.edu/~leemis/chart/UDR/PDFs/BinomialNormal.pdf}"^^<en> .
+# These are references for the claim that such a relationship exists. 
