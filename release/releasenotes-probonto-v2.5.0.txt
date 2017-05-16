@@ -1,0 +1,25 @@
+ProbOnto.owl version 2.5.0 
+
+filename: probonto-v2.5.owl
+
+Additions and modifications: 
+- Additional PDs
+- Change in relationship classification. Internally called 'delta' version whereby composition gives way to 'stronger' component. E.g., 'reparameterisation' for 'reparameterisation, limiting'. This is a content, reversible change. 
+
+Namespace and ID conventions: Unchanged from corresponding 2.0
+- This release of ProbOnto has a single namespace: http://www.probonto.org/ontology for entities derived from http://www.probonto.org/core and http://www.probonto.org/kb
+- IDs are formatted as follows: 
+PROB_[c|k]nnnnnnn
+where "c" is used for core entities and "k" is used for knowledge base entities. The numerical part retains the 7 digit format. 
+
+http://www.probonto.org/core#0000020 is equivalent to http://www.probonto.org/ontology#PROB_c0000020
+
+http://www.probonto.org/kb#0000020 is equivalent to http://www.probonto.org/ontology#PROB_k0000020
+
+A verification table mapping is provided between versions 2.0.0 and 2.5.0. No issue detected. 
+
+Internal: 
+
+c0000036 relinquished
+k0000001 relinquished
+
